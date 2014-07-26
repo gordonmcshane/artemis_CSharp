@@ -45,8 +45,8 @@ using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following set of attributes.
 // Change these attribute values to modify the information associated with an assembly.
-[assembly: AssemblyTitle("Artemis Entity System framework library W8Portable")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Artemis Entity System framework library")]
+[assembly: AssemblyDescription("Artemis Entity System framework library")]
 [assembly: AssemblyConfiguration("W8Portable")]
 [assembly: AssemblyCompany("GAMADU.COM")]
 [assembly: AssemblyProduct("Artemis Entity System")]
@@ -69,3 +69,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("2.0.0.0")]
 [assembly: AssemblyFileVersion("2.0.0.0")]
 [assembly: NeutralResourcesLanguage("en")]
+[assembly: InternalsVisibleTo("Artemis.WindowsStore.Tests")]
+[assembly: InternalsVisibleTo("Artemis.Win8.Tests")]

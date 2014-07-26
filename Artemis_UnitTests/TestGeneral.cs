@@ -1,4 +1,4 @@
-#region File description
+﻿#region File description
 
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="TestGeneral.cs" company="GAMADU.COM">
@@ -818,8 +818,11 @@ namespace UnitTests
             Assert.IsNotNull(pool);
             Debug.WriteLine("OK");
 
+#if !METRO
             var poolAttribute = (ArtemisComponentPool) typeof(TestPowerComponentPoolable).GetCustomAttributes(typeof(ArtemisComponentPool), false).Single();
-
+#else
+            var poolAttribute = (ArtemisComponentPool) typeof(TestPowerComponentPoolable).GetTypeInfo().GetCustomAttributes(typeof(ArtemisComponentPool), false).Single();
+#endif
             Assert.AreEqual(poolAttribute.InitialSize, pool.InvalidCount, "Initially component pool should contain only invalid items");
 
             int expectedPower = default(int);
@@ -948,6 +951,7 @@ namespace UnitTests
             Debug.WriteLine("The entity {0} was removed successfully.", entity.UniqueId);
         }
 
+#if !METRO
         /// <summary>Tests initializing ComponentTypes.</summary>
 #if MONO
     [Test]
@@ -956,6 +960,7 @@ namespace UnitTests
 #endif
         public void TestInitializeComponentTypes()
         {
+
             FieldInfo field = typeof(ComponentTypeManager).GetField("ComponentTypes", BindingFlags.Static | BindingFlags.NonPublic);
             Assert.IsNotNull(field, "ComponentTypeManager.ComponentTypes field has not been found");
             Assert.IsTrue(field.GetValue(null).GetType() == typeof(Dictionary<Type, ComponentType>), "ComponentTypes container is expected to be of type Dictionary<Type, ComponentType>");
@@ -1165,5 +1170,6 @@ namespace UnitTests
                 Assert.IsFalse(thrown, "Getting SystemBit for 33rd EntitySystem instance should not fail when BigInteger bit type is used");
             }
         }
+#endif
     }
 }

@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTests</RootNamespace>
-    <AssemblyName>UnitTests</AssemblyName>
+    <AssemblyName>Artemis.Win8.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -39,7 +39,7 @@
     <DefineConstants>TRACE;DEBUG;PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Test\UnitTests.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Test\Artemis.Win8.Tests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -49,7 +49,7 @@
     <DefineConstants>PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Test\UnitTests.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Test\Artemis.Win8.Tests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>UnitTests.Program</StartupObject>
@@ -58,6 +58,7 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\TestBaseComponent.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="System\TestCommunicationSystem.cs" />
     <Compile Include="System\TestEntityComponentProcessingSystem1.cs" />
     <Compile Include="System\TestEntityComponentProcessingSystem2.cs" />
-	<Compile Include="System\TestIntervalEntitySystem.cs" />
+    <Compile Include="System\TestIntervalEntitySystem.cs" />
     <Compile Include="System\TestEntityProcessingSystem.cs" />
     <Compile Include="System\TestEntityProcessingSystem1.cs" />
     <Compile Include="System\TestEntityProcessingSystem2.cs" />
